@@ -38,4 +38,6 @@ class VideoPlatformTest {
         videoPlatform.readDataFromFile(Path.of("src/test/resources/data.csv"));
         assertEquals(295,videoPlatform.calculateSumOfVideos());
     }
+
+
 }

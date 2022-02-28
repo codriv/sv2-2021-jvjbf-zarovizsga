@@ -25,4 +25,8 @@ public class Product {
     public int getStock() {
         return stock;
     }
+
+    public long getId() {
+        return id;
+    }
 }
