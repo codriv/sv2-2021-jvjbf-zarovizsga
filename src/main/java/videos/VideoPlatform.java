@@ -20,15 +20,19 @@ public class VideoPlatform {
             scanner.nextLine();
             while (scanner.hasNext()) {
                 String line = scanner.nextLine();
-                String[] parts = line.split(";");
-                String channelName = parts[0];
-                int subscriptions = Integer.parseInt(parts[1]);
-                int numberOfVideos = Integer.parseInt(parts[2]);
-                channels.add(new Channel(channelName, subscriptions, numberOfVideos));
+                addChannel(line);
             }
         } catch (IOException ioe) {
             throw new IllegalArgumentException("Cannot open file for read!");
         }
+    }
+
+    private void addChannel(String line) {
+        String[] parts = line.split(";");
+        String channelName = parts[0];
+        int subscriptions = Integer.parseInt(parts[1]);
+        int numberOfVideos = Integer.parseInt(parts[2]);
+        channels.add(new Channel(channelName, subscriptions, numberOfVideos));
     }
 
     public int calculateSumOfVideos() {

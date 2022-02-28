@@ -2,11 +2,13 @@ package webshop;
 
 public class Product {
 
+    private long id;
     private String productName;
     private int price;
     private int stock;
 
-    public Product(String productName, int price, int stock) {
+    public Product(long id, String productName, int price, int stock) {
+        this.id = id;
         this.productName = productName;
         this.price = price;
         this.stock = stock;
